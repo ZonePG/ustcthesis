@@ -1,0 +1,39 @@
+% !TeX root = ../main.tex
+
+\ustcsetup{
+  keywords  = {情绪分析, 大语言模型, 心理健康},
+  keywords* = {Emotion Analysis, Large Language Model, Mental Health},
+}
+
+\begin{abstract}
+  % 近年来，心理健康问题引起了广泛关注，对此，大型语言模型因其在文本理解和对话处理方面的强大能力，逐渐成为辅助解决心理健康问题的潜在工具。心理健康领域的研究和应用逐步发展到在线对话和语音场景，其中情绪分析成为理解用户心理状态的关键技术。在对话场景中，情绪分析有助于心理评估和诊断，为心理健康领域提供了有价值的支持。而在语音对话场景中，准确识别和跟踪情绪的变化则为智能客服、教育以及心理监测等场景带来了更具个性化的服务，甚至为情绪干预提供了科学依据。
+
+  % 尽管情绪分析在心理健康和智能服务中具有重要作用，当前的技术仍面临着诸多难点。在对话场景的情绪分析中，现有的模型往往面临数据集的局限，尤其是在缺乏先验知识和专业证据的数据集上训练时，难以有效捕捉心理对话中的细微情绪变化。而在语音情绪分析领域，情绪表现的多样性和细微变化是另一大难点。当前的情绪分析技术主要集中于单一标签的情绪分类，如“愉快”“愤怒”等，难以适应实际对话中情绪的交替和波动。例如，在某些场景中，用户的情绪可能从轻微愤怒逐渐过渡到失望，传统模型难以准确捕捉这一动态变化。为了解决这些问题，本文提出了两种情绪分析大模型：
+
+  % （1）第一个技术方法是针对心理健康场景的情感对话大模型。是一个专为心理健康领域设计的大型语言模型，训练在高质量的心理数据集上，包含单轮问答、多轮对话和基于知识的问答，能够更好地适应心理健康对话场景中的情绪分析需求。具体方法包括三步：生成、证据判断和细化，以构建多轮对话。通过引用真实世界心理案例背景的训练数据，增强模型的情绪分析的相关性和适用性。
+
+  % （2）第二个技术方法针对在线辅助语音对话场景的多模态情感描述大模型。本文提出的系统融合了语音声学特征和文本信息，能够生成符合语音情境的多样化情感描述字幕。该方法通过多模态信息整合，生成更为细腻和动态的情感表达，能更准确地捕捉对话过程中情绪的微小变化，满足复杂情绪表达的需求。
+
+  % 通过这两个方面的工作，本文实现了在文本和语音对话场景下对情绪状态的全面理解和动态分析，并基于大模型技术构建了有效的情绪分析系统，为心理健康和智能服务中的情绪分析提供了创新性的技术支持。
+
+近年来，心理健康问题日益受到关注，智能对话系统逐渐成为辅助心理健康服务的重要工具。传统的心理健康干预依赖专业心理咨询师，但由于资源有限、成本高昂，许多有需求的个体难以获得有效帮助。基于大语言模型的智能对话系统为此提供了潜在解决方案。然而，现有的情感对话模型在情感理解与共情能力方面仍存在不足，难以充分满足心理健康领域的需求。为提升心理健康智能服务的精准性、自然性与共情能力，本文提出了一种面向心理健康与语音交互场景的情绪分析大模型。本文的主要贡献如下：
+
+1. 本文提出了一种面向心理健康场景的情感对话大模型 PsycoLLM。现有对话系统往往缺乏对心理健康场景下情感变化的深入理解，难以提供高质量的共情交互体验。为此，本文构建了高质量的心理健康对话数据集，涵盖单轮问答、多轮对话及知识驱动对话，并采用有监督微调方法优化模型，使其在心理咨询任务中具备更强的情感共鸣与问题应对能力。此外，本文设计了一套心理学评估测试集，以量化评估模型在不同心理咨询任务中的表现。实验结果表明，模型在心理健康对话场景中的客观评估准确率较基线模型提升 10\%，并在多个心理学指标上表现更优，展现出更强的情感理解与交互能力。
+
+2. 本文提出了一种多模态情感描述大模型 SEMO-LLM，以克服现有语音情绪分析方法主要依赖单一标签分类、难以捕捉情绪变化及连续性表达的局限性。该模型融合语音声学特征与文本信息，生成更为细腻和动态的情感描述文本。模型采用稀疏桥接 Transformer 结构对齐语音特征与文本特征，并借助大语言模型生成符合语境的情感描述。在基于 IEMOCAP 和 MELD 构建的语音情感描述数据集上的实验结果表明，模型在多个文本描述评估指标上均优于基线模型，为语音情绪分析提供了一种新型的大模型解决方案。
+
+3. 本文基于 PsycoLLM 和 SEMO-LLM 设计并实现了一套大模型驱动的心理健康与情绪分析系统，以进一步提升心理健康智能服务的落地应用效果。该系统集成了心理健康对话支持与语音情感分析功能，提供更智能化、个性化的心理健康服务。在心理健康对话支持方面，系统基于 PsycoLLM 提供更具共情能力的交互体验，使用户能够获得更自然的心理支持反馈；在语音情感分析方面，系统利用 SEMO-LLM 解析语音输入，生成情感描述，辅助心理健康评估，并为个性化情绪干预提供有效支持。
+
+
+\end{abstract}
+
+\begin{abstract*}
+In recent years, mental health issues have received increasing attention, and intelligent dialogue systems are becoming essential tools in supporting mental health services. Traditional mental health interventions rely on professional therapists; however, due to limited resources and high costs, many individuals in need struggle to access effective assistance. Large language model (LLM)-based intelligent dialogue systems offer a potential solution to this challenge. However, existing emotional dialogue models still exhibit deficiencies in emotional understanding and empathy, making them insufficient for the demands of mental health applications. To enhance the precision, naturalness, and empathetic capability of intelligent mental health services, this study proposes a large-scale emotion analysis model tailored for mental health and speech interaction scenarios. The main contributions of this study are as follows:
+
+1. This study proposes PsycoLLM, a large-scale emotional dialogue model designed for mental health scenarios. Traditional dialogue systems often lack a deep understanding of emotional dynamics in mental health contexts, making it difficult to provide high-quality empathetic interactions. To address this limitation, we constructed a high-quality mental health dialogue dataset, covering single-turn question and answer, multi-turn dialogues, and knowledge-driven conversations. Additionally, the model was optimized through supervised fine-tuning to enhance its emotional resonance and problem-solving capabilities in mental health counseling tasks. Furthermore, a psychological assessment test set was developed to quantitatively evaluate model’s performance across different counseling tasks. Experimental results show that PsycoLLM improves objective evaluation accuracy by 10\% compared to baseline models in mental health dialogue scenarios and demonstrates superior performance across multiple psychological indicators, showcasing enhanced emotional understanding and interaction capabilities.
+
+2. Existing speech emotion analysis methods primarily rely on single-label classification, limiting their ability to capture emotional variations and continuous expressions. To address this issue, this study introduces SEMO-LLM, a multimodal large-scale emotion description model that integrates acoustic speech features and textual information to generate more nuanced and dynamic emotional descriptions. The model employs a sparse-bridging Transformer architecture to align speech and textual features, leveraging LLMs to generate contextually appropriate emotional descriptions. Experimental results on speech emotion description datasets constructed from IEMOCAP and MELD demonstrate that model outperforms baseline models across multiple text description evaluation metrics, offering a novel LLM-based solution for speech emotion analysis.
+
+3. To further enhance the practical application of intelligent mental health services, this study designs and implements an LLM-driven mental health and emotion analysis system based on PsycoLLM and SEMO-LLM. This system integrates mental health dialogue support and speech emotion analysis functionalities, providing more intelligent and personalized mental health services. For mental health dialogue support, the system leverages PsycoLLM to enable more empathetic interactions, allowing users to receive natural and supportive psychological feedback. In speech emotion analysis, the system utilizes SEMO-LLM to process speech inputs, generate emotional descriptions, assist in mental health assessments, and provide effective support for personalized emotional interventions.
+
+\end{abstract*}
