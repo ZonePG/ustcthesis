@@ -2,7 +2,7 @@
 % !TeX program = xelatex
 % !TeX spellcheck = en_US
 
-\documentclass[degree=doctor]{ustcthesis}
+\documentclass[degree=master, degree-type=engineering, language=chinese, fontset=mac]{ustcthesis}
 % degree      = doctor | master | bachelor
 % degree-type = academic | professional | engineering
 % language    = chinese | english
@@ -18,8 +18,7 @@
 \copyrightpage
 
 \frontmatter
-\include{chapters/innovations}  % 博士学位论文的创新性说明
-\include{chapters/abstract}
+\input{chapters/0_abstract.tex}
 \tableofcontents
 % \listoffigures
 % \listoftables
@@ -27,10 +26,13 @@
 % \include{chapters/notation}
 
 \mainmatter
-\include{chapters/intro}
-\include{chapters/floats}
-\include{chapters/math}
-\include{chapters/citations}
+\input{chapters/1_intro.tex}
+\input{chapters/2_related_work.tex}
+\input{chapters/3_work1.tex}
+\input{chapters/4_work2.tex}
+\input{chapters/5_work3.tex}
+\input{chapters/6_summary.tex}
+% \input{chapters/citations.tex}
 
 \bibliography{bib/ustc}  % 参考文献使用 BibTeX 编译
 % \printbibliography       % 参考文献使用 BibLaTeX 编译
@@ -39,7 +41,7 @@
 \include{chapters/complementary}
 
 \backmatter
-\include{chapters/acknowledgements}
-\include{chapters/achievements}
+\input{chapters/acknowledgements.tex}
+\input{chapters/achievements.tex}
 
 \end{document}
