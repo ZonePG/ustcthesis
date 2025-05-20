@@ -263,5 +263,6 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 
+*.mp4
 笔杆*/
 答辩材料/
